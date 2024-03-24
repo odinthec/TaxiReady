@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <header>
+        <div class="wrap">
+            <div class="wrap-text"> 
+                    <h1 style="text-align: center; color: white; font-size: xxx-large;">¡BIENVENIDO!</h1>
+                    <img src="image/logo.jpg" style="width: 50%; height: 50%; align-items: center;margin-left: 25%;"></img>
+                <section id="inicio">         
+                    <h1 style="color: white;">¡POR FAVOR!</h1>
+                    <h1 style="text-align: center; color: white; top: 60px;">Elije lo que quiere hacer:</h1>
+               
+                    <nav>
+                        <ul>
+                            <li><a href="#registroTaxistas">∎ Registrarme como Taxista</a></li>
+                            <li><a href="#encuentraPasajeros">∎ Encuentra los pasajeros de mi área</a></li>    
+                            <li><a href="#registroPasajeros">∎ Registrarme como Pasajero</a></li>    
+                            <li><a href="#encuentraTaxistas">∎ Encuentra los taxistas de mi área</a></li>    
+                            <li><a href="#chat-llamada">∎ Realizar chat y llamada</a></li>   
+                            <li><a href="#location-map">∎ Abre el mapa de ubicación</a></li>    
+                            <li><a href="#optionPagarTaxistas">∎ Selecciona mi método de pago</a></li>
+                            <li><a href="#contactos">∎ Contáctar a Taxiready</a></li>    
+                        </ul>
+                    </nav>
+                </section>
+            </div>
+        </div>
+    </header>       
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAXIREADY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="registroTaxistas">
+        <h2>Regístrate aquí como Taxista para encontrar los pasajeros cercanos y ofrecer tus servicios.</h2>
+        <img src="image/taxista.jpg" alt="taxiready">
+        <form action="registro_taxistas.php" method="post">
+            <fieldset>
+                <legend>Registrarse como Taxista:</legend>
+                <label for="given-name">Nombre completo:</label><br>
+                <input type="text" id="given-name" name="given-name" required placeholder="Tu Nombre completo"><br>
+            
+                <label for="licencia_conducir">Número de Licencia de conducir:</label><br>
+                <input type="number" id="licencia_conducir" name="licencia_conducir" required placeholder="número de tu Licencia de conducir"><br>
+            
+                <label for="placa_vehiculo">Número de Placa del vehículo:</label><br>
+                <input type="text" id="placa_vehiculo" name="placa_vehiculo" required placeholder="Número de Placa del vehículo"><br>
+            
+                <label for="country_taxista">Tu País:</label><br>
+                <input type="text" id="country_taxista" name="country_taxista" required placeholder="Tu País"><br>
+            
+                <label for="ciudad_taxista">Ciudad:</label><br>
+                <input type="text" id="ciudad_taxista" name="ciudad_taxista" required placeholder="Ciudad"><br>
+            
+                <label for="phone_taxista">Tu número de teléfono:</label><br>
+                <input type="number" id="phone_taxista" name="phone_taxista" required placeholder="Tu número de teléfono"><br>
+            
+                <label for="ruta_taxista">Tu Ruta:</label><br>
+                <input type="text" id="ruta_taxista" name="ruta_taxista" required placeholder="Tu Ruta"><br>
+              
+                <label for="Contraseña">Crear tu Contraseña:</label><br>
+                <input type="password" id="Contraseña" name="Contraseña" required placeholder="Crear tu Contraseña"><br>
+            
+                <label for="foto">Elije tu Foto de Perfil:</label><br>
+                <input type="file" id="foto" name="foto" required><br>
+                <button type="submit">Registrarse</button>
+            </fieldset>
+        </form>
+    </section>
+    
+    <button id="Vuelveinicio" style="margin:15px; background-color: aqua; margin-left: 38%;"><a href="#inicio">Vuelve al menu principal</a></button>
+
+        <section id="encuentraPasajeros">
+          <h2>Encuentra pasajeros cercanos:</h2>
+          <form id="formpasajeros">
+          <label for="areapasajeros">Selecciona tu área:</label>
+              <select id="areapasajeros">
+                  <option value="area1">Área 1</option>
+                  <option value="area2">Área 2</option>
+                  <option value="area3">Área 3</option>
+              </select>
+          </form>
+          <h2>Lista de pasajeros de tu área:</h2>
+          <ul id="listaPasajerosTaxistas"></ul>
+        </section>
+        <button id="Vuelveinicio" style="margin:15px; background-color: aqua; margin-left: 38%;"><a href="#inicio">Vuelve al menu principal</a></button>
+
+    <section id="registroPasajeros">
+        <h2>Regístrate aquí como pasajero para encontrar los taxistas cercanos y solicitar tu viaje gratis.</h2>
+        <img src="image/pasajera.jpg" alt="taxiready"></img>   
+        <form action="registro_pasajeros.php" method="post">
+            <fieldset>
+                <legend>Registrarse como Pasajero:</legend>
+                <label for="given_name">Nombre completo:</label><br>
+                <input type="text" id="given_name" name="given_name" required placeholder="Tu Nombre completo"><br>
+    
+                <label for="id_Card">Cédula de identidad:</label><br>
+                <input type="text" id="id_Card" name="id_Card" required placeholder="Cédula de identidad"><br>
+    
+                <label for="country_passenger">País:</label><br>
+                <input type="text" id="country_passenger" name="country_passenger" required placeholder="País"><br>
+    
+                <label for="ciudad_pasajero">Ciudad:</label><br>
+                <input type="text" id="ciudad_passenger" name="ciudad_passenger" required placeholder="Ciudad"><br>
+    
+                <label for="phone_taxista">Teléfono:</label><br>
+                <input type="text" id="phone_passenger" name="phone_passenger" required placeholder="Teléfono"><br>
+    
+                <label for="password">Contraseña:</label><br>
+                <input type="password" id="password" name="password" required placeholder="Crear tu Contraseña"><br>
+    
+                <label for="foto">Foto de Perfil:</label><br>
+                <input type="file" id="foto" name="foto" required accept="image/*" placeholder="Elije tu Foto de Perfil"><br>
+    
+                <button type="submit">Registrarse</button>
+            </fieldset>
+        </form>
+    </section>
+    
+    <button id="Vuelveinicio" style="margin:15px; background-color: aqua; margin-left: 38%;"><a href="#inicio">Vuelve al menu principal</a></button>
+
+    <section id="encuentraTaxistas">
+      <h2>Encuentra taxistas cercanos:</h2>
+        <form id="formPasaje">
+          <label for="areaPasajeros">Selecciona tu área:</label>
+            <select id="areaPasajeros">
+              <option value="area1">Área 1</option>
+              <option value="area2">Área 2</option>
+              <option value="area3">Área 3</option>
+            </select>
+        </form>
+      <h2>Lista de Taxistas de tu área:</h2>
+      <ul id="listaTaxistasPasajeros"></ul>
+    </section>
+  
+  
+ 
+    <button id="Vuelveinicio" style="margin:15px; background-color: aqua; margin-left: 38%;"><a href="#inicio">Vuelve al menu principal</a></button>
+
+
+    <section id="chat-llamada">
+           <h2>Realizar chat y llamadas</h2>
+        <div id="call-buton-container">
+            <p>Inicia una llamada:</p>
+            <button id="call-button">Llamar al taxista</button>
+        </div>
+        <div id="chat-container">
+          <p>Inincia un Chat:</p>
+          <div id="messages"></div>
+          <input type="text" id="message-input" placeholder="Escribe tu mensaje">
+          <button id="send-button">Enviar</button>
+        </div>
+    </section>
+    <button id="Vuelveinicio" style="margin:15px; background-color: aqua; margin-left: 38%;"><a href="#inicio">Vuelve al menu principal</a></button>>
+
+
+
+    <section id="location-map">
+        <legend>
+            <h1>Mapa de Ubicación</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15049.831424062671!2d-70.609782!3d19.435816799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sdo!4v1708229201273!5m2!1ses-419!2sdo" style="width: 600px; height: 300px; border: block color 10px gold;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </legend>
+    </section>
+    <button id="Vuelveinicio" style="margin:15px; background-color: aqua; margin-left: 38%;"><a href="#inicio">Vuelve al menu principal</a></button>
+
+    <section id="optionPagarTaxistas">
+        <p>Esta opción es obligatoria para los taxistas,deben regitrarse antes para poder realizar sus pagos mensual de Taxiready.</p>
+         <h1>Selecciona tu método de pago:</h1>
+        <form id="paymentForm">
+            <label for="creditCard">Tarjeta de Crédito</label>
+            <input type="radio" id="creditCard" name="paymentMethod" value="creditCard">
+            
+            <label for="debitCard">Tarjeta de Débito</label>
+            <input type="radio" id="debitCard" name="paymentMethod" value="debitCard">
+            
+            <label for="digitalCurrency">Moneda Digital</label>
+            <input type="radio" id="digitalCurrency" name="paymentMethod" value="digitalCurrency">
+            
+            <label for="bankTransfer">Transferencia Bancaria</label>
+            <input type="radio" id="bankTransfer" name="paymentMethod" value="bankTransfer">
+            <div id="paymentDetails" style="display:none;">
+                <label for="cardHolder"></label>
+                <input type="text" id="cardHolder" name="cardHolder" placeholder="Titular de la tarjeta:">
+                <label for="cardNumber"></label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="Número de tarjeta:">
+                <label for="expiryDate"></label>
+                <input type="text" id="expiryDate" name="expiryDate" placeholder="Fecha de expiración:  00/00  ">
+                <label for="cvv"></label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVC/000">
+            </div>
+                <button type="submit">Pagar</button>
+        </form>
+    </section>
+    <style>
+        #paymentDetails {
+  display: none;
+}
+
+#paymentForm {
+  border: 5px outset gold;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+input[type="radio"]:checked ~ #paymentDetails {
+  display: block;
+}
+#optionPagarTaxistas {
+    border: 15px outset red;
+}
+h1 {
+    text-align: center;
+}
+
+    </style>
+    <script>
+        document.querySelectorAll('input[name="paymentMethod"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        document.getElementById('paymentDetails').style.display = this.checked ? 'block' : 'none';
+    });
+});
+
+    </script>
+     <button id="Vuelveinicio" style="margin:15px; background-color: aqua; margin-left: 38%;"><a href="#inicio">Vuelve al menu principal</a></button>
+
+    <section id="contactos"><h2>Contacto</h2><p>¿tienes algunas preguntas? Contáctanos.</p>
+        <form action="contact.php" method="get">
+           <label for="name"></label>
+           <input type="text" id="name" required placeholder="Nombre completo"><br>
+           <label for="email"></label>
+           <input type="text" id="email" required placeholder="Correo Electronico"><br>
+           <label for="country"></label>
+           <input type="text" id="country" required placeholder="país"><br>
+           <label for="municipality"></label>
+           <input type="text" id="municipality" required placeholder="Ciudad"><br>
+           <label for="phone_contacto"></label>
+           <input type="number" id="phone" required placeholder="Telefono"><br>
+           <label for="mensaje"></label><br>
+           <textarea id="menssage" name="menssage" rows="8" required placeholder="mensaje"></textarea><br>
+           <button id="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <button id="Vuelveinicio" style="margin:15px; background-color: aqua; margin-left: 38%;"><a href="#inicio">Vuelve al menu principal</a></button>
+        <footer><p>Derechos de autor © 2024 Taxiready App de Taxistas</p></footer>
+
+        <scrpt src="app.js" ></script>
+        <noscript>Necesitas activar Javascript para ver la pagina completa</noscript>
+</body>
+</html>
