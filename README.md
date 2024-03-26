@@ -1,4 +1,3 @@
-#Primera versión de "Way App".
 Descripción del Proyecto:
 Es una nueva app interactiva para taxistas y pasajeros en el mundo. 
 Es una plataforma para usuarios taxistas conseguir pasajeros y pasajeros solicitar taxis,y que frece funciones específicas para pasajeros y conductores.
