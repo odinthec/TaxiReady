@@ -1,5 +1,3 @@
-
- 
  // Datos de ejemplo de taxistas y pasajeros en diferentes áreas con sus datos de contacto
  const personasPorArea = {
     "ubicacion1": [
@@ -24,6 +22,64 @@ function mostrarPersonas(area, listaElemento) {
         listaElemento.appendChild(li);
     });
 }
+
+let taxistasDisponibles = [];
+let taxistasNoDisponibles = [];
+
+function toggleDisponibilidad() {
+    let nombreTaxista = prompt("Por favor, introduce tu nombre:");
+
+    if (taxistasDisponibles.includes(nombreTaxista)) {
+        taxistasDisponibles = taxistasDisponibles.filter(taxista => taxista !== nombreTaxista);
+        taxistasNoDisponibles.push(nombreTaxista));
+    } else if (
+        taxistasNoDisponibles.includes(nombreTaxista)) {
+        taxistasNoDisponibles = taxistasNoDisponibles.filter(taxista => taxista !== nombreTaxista);
+    } else {
+        taxistasDisponibles.push(nombreTaxista);
+    }
+
+    actualizarListas();
+}
+
+function actualizarListas() {
+    let taxistasDisponiblesElement = document.getElementById("taxistasDisponibles");
+    let taxistasNoDisponiblesElement = document.getElementById("taxistasNoDisponibles");
+
+    taxistasDisponiblesElement.innerHTML = "";
+    taxistasNoDisponiblesElement.innerHTML = "";
+
+    taxistasDisponibles.forEach(taxista => {
+        let li = document.createElement("li");
+        li.textContent = taxista;
+        taxistasDisponiblesElement.appendChild(li);
+    });
+
+    taxistasNoDisponibles.forEach(taxista => {
+        let li = document.createElement("li");
+        li.textContent = taxista;
+        taxistasNoDisponiblesElement.appendChild(li);
+    });
+}
+
+// Manejar el envío del formulario
+document.getElementById("registroForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    let nombreChofer = document.getElementById("nombre").value;
+    let fotoChofer = document.getElementById("foto").files[0];
+
+    // Aquí puedes hacer algo con el nombre y la foto del chofer (por ejemplo, enviarlos al servidor)
+
+    document.getElementById("nombre").value = "";
+    document.getElementById("foto").value = "";
+
+    // Actualizar las listas después de registrar al chofer
+    choferesDisponibles.push(nombreTaxista);
+    actualizarListas();
+});
+
+
 
 // Función para mostrar la lista de pasajeros para los taxistas
 document.getElementById('areaTaxistas').addEventListener('change', function() {
